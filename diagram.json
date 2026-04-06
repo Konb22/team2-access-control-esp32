@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "team",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -20,
+      "left": -10,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 120,
+      "left": 160,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:GPIO2", "led1:A", "green" ],
+    [ "esp:GND.1", "led1:K", "black" ]
+  ]
+}
