@@ -72,4 +72,4 @@
 ## 🔗 GitHub Projects
 
 📌 Доска задач:  
-https://github.com/USERNAME/REPO/projects
+[https://github.com/USERNAME/REPO/projects](https://github.com/users/Konb22/projects/1)
