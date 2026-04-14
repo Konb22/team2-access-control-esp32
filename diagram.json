@@ -1,25 +1,84 @@
 {
   "version": 1,
-  "author": "team",
+  "author": "Anonymous maker",
   "editor": "wokwi",
   "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -76.8, "left": 72.04, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -434, "left": -13.6, "attrs": {} },
+    { "type": "board-mfrc522", "id": "rfid1", "top": 179.75, "left": 89.84, "attrs": {} },
     {
-      "type": "wokwi-esp32-devkit-v1",
-      "id": "esp",
-      "top": -20,
-      "left": -10,
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -97,
+      "left": -228.6,
+      "rotate": 270,
       "attrs": {}
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -150.46,
+      "left": 317.03,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -34.2, "left": 326.5, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -233.8,
+      "left": 393.6,
+      "attrs": { "color": "green", "xray": "1" }
     },
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": 120,
-      "left": 160,
+      "top": -70.8,
+      "left": -53.8,
       "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -324,
+      "left": 270.6,
+      "attrs": { "volume": "0.1" }
     }
   ],
   "connections": [
-    [ "esp:GPIO2", "led1:A", "green" ],
-    [ "esp:GND.1", "led1:K", "black" ]
-  ]
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "oled1:SDA", "esp:21", "green", [ "v0" ] ],
+    [ "rtc1:SDA", "esp:21", "green", [ "h0" ] ],
+    [ "rtc1:SCL", "esp:22", "green", [ "h0" ] ],
+    [ "oled1:SCL", "esp:22", "green", [ "v0" ] ],
+    [ "rtc1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "oled1:GND", "esp:GND.3", "black", [ "v0" ] ],
+    [ "rtc1:5V", "esp:5V", "red", [ "v162.8", "h-259.35" ] ],
+    [ "oled1:VCC", "esp:5V", "red", [ "v86.4", "h-163.2" ] ],
+    [ "rfid1:SDA", "esp:5", "green", [ "h86.4", "v-182.4" ] ],
+    [ "rfid1:SCK", "esp:18", "green", [ "h105.6", "v-201.6" ] ],
+    [ "rfid1:MOSI", "esp:23", "green", [ "h124.8", "v-278.4" ] ],
+    [ "rfid1:MISO", "esp:19", "green", [ "h172.8", "v-230.4" ] ],
+    [ "rfid1:3.3V", "esp:3V3", "green", [ "h-48", "v-336" ] ],
+    [ "rfid1:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "keypad1:R1", "esp:13", "green", [ "h-76.8", "v182.4" ] ],
+    [ "keypad1:R2", "esp:12", "green", [ "h-67.6", "v163.2" ] ],
+    [ "keypad1:R3", "esp:14", "green", [ "v0" ] ],
+    [ "keypad1:R4", "esp:27", "green", [ "v0" ] ],
+    [ "keypad1:C1", "esp:26", "green", [ "v0" ] ],
+    [ "keypad1:C2", "esp:25", "green", [ "v0" ] ],
+    [ "keypad1:C3", "esp:33", "green", [ "v0" ] ],
+    [ "keypad1:C4", "esp:32", "green", [ "v0" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "servo1:V+", "esp:5V", "green", [ "v0" ] ],
+    [ "servo1:PWM", "esp:4", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:15", "green", [ "v0" ] ],
+    [ "bz1:2", "esp:GND.2", "green", [ "v192", "h-134.8" ] ],
+    [ "rfid1:RST", "esp:16", "green", [ "h144", "v-220.8" ] ],
+    [ "led1:A", "esp:2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "btn1:1.l", "esp:17", "green", [ "h-144", "v268.8" ] ],
+    [ "btn1:2.r", "esp:GND.2", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
 }
