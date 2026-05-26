@@ -1,1 +1,0 @@
-bool rfidReady = true;
