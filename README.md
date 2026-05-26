@@ -89,3 +89,28 @@
 - Система ролей пользователей
 - Блокировка после неверных попыток входа
 - Журналирование событий
+---
+
+## 📦 Версия проекта
+
+Текущая версия проекта: `v1.0`
+
+Статус проекта: ✅ Завершён
+
+Дата завершения проекта: 2026
+---
+
+## 🔮 Возможные улучшения
+
+- Подключение базы данных пользователей
+- Web-интерфейс администратора
+- Wi-Fi синхронизация времени
+- Облачное хранение журнала событий
+- Мобильное приложение для управления доступом
+- ---
+
+## 🔗 Ссылки проекта
+
+- GitHub Repository: [https://github.com/Konb22/team2-access-control-esp32](https://github.com/Konb22/team2-access-control-esp32)
+- GitHub Projects: [https://github.com/users/Konb22/projects/1](https://github.com/users/Konb22/projects/1)
+- Sprint Pull Requests: [https://github.com/Konb22/team2-access-control-esp32/pulls](https://github.com/Konb22/team2-access-control-esp32/pulls)
